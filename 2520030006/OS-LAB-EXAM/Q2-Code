@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "=== Memory Usage ==="
+free -h
+echo
+echo "=== CPU Usage ==="
+top -bn1 | head -5
+Input commands:
+nano cpumem.sh
+chmod +x cpumem.sh
+./cpumem.sh
