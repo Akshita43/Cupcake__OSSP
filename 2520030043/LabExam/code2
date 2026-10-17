@@ -1,1 +1,29 @@
+#include <stdio.h>
 
+int main() {
+    int n, bt[20], t = 0, wt;
+    float aw = 0, at = 0;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    printf("Enter burst times: ");
+    for (int i = 0; i < n; i++)
+        scanf("%d", &bt[i]);
+
+    printf("P\tBT\tWT\tTAT\n");
+
+    for (int i = 0; i < n; i++) {
+        wt = t;
+        t += bt[i];
+
+        printf("P%d\t%d\t%d\t%d\n", i + 1, bt[i], wt, t);
+
+        aw += wt;
+        at += t;
+    }
+
+    printf("Avg WT=%.2f  Avg TAT=%.2f\n", aw/n, at/n);
+
+    return 0;
+}
